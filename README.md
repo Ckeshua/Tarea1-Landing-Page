@@ -81,13 +81,13 @@ Proyecto de diseno de pagina con scroll y login.
 <!-- Contacto -->
 ## Contact
 
-David Barcia
-Julio Ferreira
-Eduardo Mellado	[https://github.com/Ckeshua](https://github.com/Ckeshua)
-Gustavo Orellana
-Rodrigo Rivero
-Clemente Spoerer
-Project Link: [https://github.com/Ckeshua/Tarea1](https://github.com/Ckeshua/Tarea1)
+* David Barcia
+* Julio Ferreira
+* Eduardo Mellado	[https://github.com/Ckeshua](https://github.com/Ckeshua)
+* Gustavo Orellana
+* Rodrigo Rivero
+* Clemente Spoerer
+* Project Link: [https://github.com/Ckeshua/Tarea1](https://github.com/Ckeshua/Tarea1)
 
 
 
