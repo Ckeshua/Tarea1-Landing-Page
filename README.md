@@ -66,9 +66,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -78,17 +75,14 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+Proyecto de diseno de pagina con scroll y login.
+scroll ubicado en la ruta /
+login ubicado en la ruta /login
 
 ### Prerequisites
 * Install php and laravel
   [instruction link](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
-
+* Use a php artisan serve command
 ### Installation
 
 1. Clone the repo
@@ -102,11 +96,6 @@ Here's a blank template to get started:
 * [Boostrap](https://getbootstrap.com/)
 * [Laravel](https://laravel.com/)
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/Ckeshua/Tarea1/issues) for a list of proposed features (and known issues).
 
 
 
