@@ -76,8 +76,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 Proyecto de diseno de pagina con scroll y login.
-scroll ubicado en la ruta /
-login ubicado en la ruta /login
+* scroll ubicado en la ruta /
+* login ubicado en la ruta /login
 
 ### Prerequisites
 * Install php and laravel
