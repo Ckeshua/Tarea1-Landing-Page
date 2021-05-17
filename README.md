@@ -85,6 +85,10 @@ Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
 `github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
+### Prerequisites
+* Install php and laravel
+  [instruction link](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
+
 ### Installation
 
 1. Clone the repo
