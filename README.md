@@ -39,7 +39,7 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/Ckeshua/Tarea1"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Ckeshua/Tarea1"><strong>Explora l »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Ckeshua/Tarea1">View Demo</a>
