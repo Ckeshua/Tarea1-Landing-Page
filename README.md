@@ -81,7 +81,7 @@ Proyecto de diseno de pagina con scroll y login.
 <!-- Contacto -->
 ## Contact
 
-* David Barcia
+* David Barcia (https://github.com/Zailarx5)
 * Julio Ferreira [Developer](https://github.com/JulioFe)
 * Eduardo Mellado	[https://github.com/Ckeshua](https://github.com/Ckeshua)
 * Gustavo Orellana
