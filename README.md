@@ -24,27 +24,6 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/Ckeshua/Tarea1">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">project_title</h3>
-
-  <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/Ckeshua/Tarea1"><strong>Explora l »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/Ckeshua/Tarea1">View Demo</a>
-    ·
-    <a href="https://github.com/Ckeshua/Tarea1/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Ckeshua/Tarea1/issues">Request Feature</a>
-  </p>
-</p>
 
 
 
