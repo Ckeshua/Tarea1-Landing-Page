@@ -85,7 +85,7 @@ Proyecto de diseno de pagina con scroll y login.
 * Julio Ferreira [Developer](https://github.com/JulioFe)
 * Eduardo Mellado	[Scrum Master](https://github.com/Ckeshua)
 * Gustavo Orellana [Product Owner](https://github.com/Gaos700)
-* Rodrigo Rivero
+* Rodrigo Rivero [Developer](https://github.com/Riverozky)
 * Clemente Spoerer
 * Project Link: [https://github.com/Ckeshua/Tarea1](https://github.com/Ckeshua/Tarea1)
 
