@@ -84,7 +84,7 @@ Proyecto de diseno de pagina con scroll y login.
 * David Barcia (https://github.com/Zailarx5)
 * Julio Ferreira [Developer](https://github.com/JulioFe)
 * Eduardo Mellado	[Scrum Master](https://github.com/Ckeshua)
-* Gustavo Orellana [Prodict Owner](https://github.com/Gaos700)
+* Gustavo Orellana [Product Owner](https://github.com/Gaos700)
 * Rodrigo Rivero
 * Clemente Spoerer
 * Project Link: [https://github.com/Ckeshua/Tarea1](https://github.com/Ckeshua/Tarea1)
