@@ -29,24 +29,24 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary><h2 style="display: inline-block">Tabla de Contenidos</h2></summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">Sobre el Proyecto</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Programado</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Inicializando</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#prerequisites">Prerequisitos</a></li>
+        <li><a href="#installation">Instalacion</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#usage">Uso</a></li>
+    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#acknowledgements">Agradecimientos</a></li>
   </ol>
 </details>
 
@@ -86,7 +86,7 @@ Proyecto de diseno de pagina con scroll y login.
 * Eduardo Mellado	[Scrum Master](https://github.com/Ckeshua)
 * Gustavo Orellana [Product Owner](https://github.com/Gaos700)
 * Rodrigo Rivero [Developer](https://github.com/Riverozky)
-* Clemente Spoerer
+* Clemente Spoerer [Developer](https://github.com/alomex21)
 * Project Link: [https://github.com/Ckeshua/Tarea1](https://github.com/Ckeshua/Tarea1)
 
 
