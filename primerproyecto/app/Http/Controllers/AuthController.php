@@ -11,7 +11,8 @@ class AuthController extends Controller
     public function intentos(){
         $nombre = request('rut');
         if(isset($_COOKIE["block".$nombre])){
-            echo "El rut $nombre esta bloqueado por 1 minuto";
+            $error = "El rut $nombre esta bloqueado por 1 minuto";
+            return view('login')->with("error", "$error");
         }
         else {
             if($nombre == 123){

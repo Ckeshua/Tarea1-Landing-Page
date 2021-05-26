@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
     <title>Document</title>
 </head>
-<body class="justify-content-center align-items-center row vh-100 m-0">
+<body>
+    <?php 
+        if(isset($error)) {
+            echo '<div class="alert alert-success">Usuario bloqueado durante 1 minuto</div>';;
+        }
+    ?>
     <form action="/" method="post">
     @csrf
     <input type="text" name="rut" placeholder="Rut">
