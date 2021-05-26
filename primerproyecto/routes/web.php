@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::post('/', [AuthController::class, "intentos"]);
+
+Route::get('generate-pdf',[PDFController::class, "generatePDF"]);   //[PDFController::class, "intentos"]
