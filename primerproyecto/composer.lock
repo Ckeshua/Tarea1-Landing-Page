@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f47f18bd5dca58f4d82b796c8ea36af7",
+    "content-hash": "afa5639413430b7f2ae5540cb52ac16f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -993,6 +993,53 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.8.1"
             },
             "time": "2021-03-21T16:25:00+00:00"
+        },
+        {
+            "name": "hansschouten/phpagebuilder",
+            "version": "v0.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/HansSchouten/PHPageBuilder.git",
+                "reference": "f6c3fa0221ea1c0567c9f737e8af2201b2a0a86d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/HansSchouten/PHPageBuilder/zipball/f6c3fa0221ea1c0567c9f737e8af2201b2a0a86d",
+                "reference": "f6c3fa0221ea1c0567c9f737e8af2201b2a0a86d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPageBuilder\\": "src/"
+                },
+                "files": [
+                    "src/Core/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hans Schouten",
+                    "email": "hans@falcosolutions.nl"
+                }
+            ],
+            "description": "A drag and drop pagebuilder to manage pages in any PHP project.",
+            "homepage": "https://github.com/HansSchouten/PHPagebuilder",
+            "keywords": [
+                "pagebuilder"
+            ],
+            "support": {
+                "issues": "https://github.com/HansSchouten/PHPageBuilder/issues",
+                "source": "https://github.com/HansSchouten/PHPageBuilder/tree/v0.19.0"
+            },
+            "time": "2021-03-22T10:22:59+00:00"
         },
         {
             "name": "laravel/framework",

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '53b2b2fc4413ee6f961a5046ae52fe18fb3e7187',
+    'reference' => '1ff0fd9ea8fe4529397716eeb90173c3f12ff17d',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -213,6 +213,15 @@
       array (
       ),
       'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+    ),
+    'hansschouten/phpagebuilder' => 
+    array (
+      'pretty_version' => 'v0.19.0',
+      'version' => '0.19.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f6c3fa0221ea1c0567c9f737e8af2201b2a0a86d',
     ),
     'illuminate/auth' => 
     array (
@@ -454,7 +463,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '53b2b2fc4413ee6f961a5046ae52fe18fb3e7187',
+      'reference' => '1ff0fd9ea8fe4529397716eeb90173c3f12ff17d',
     ),
     'laravel/sail' => 
     array (

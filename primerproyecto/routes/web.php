@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('login');
 });
 
+
+
 Route::post('/', [AuthController::class, "intentos"]);
 
 Route::get('generate-pdf',[PDFController::class, "generatePDF"]);   //[PDFController::class, "intentos"]
+
