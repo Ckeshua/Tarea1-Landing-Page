@@ -62,6 +62,8 @@ Proyecto de diseno de pagina con scroll y login.
 * Install php and laravel
   [instruction link](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
 * Use a php artisan serve command
+* Instalar Xampp
+* Asegurarse de que el php.ini en la ruta de instalacion tools\php80 tenga la linea "extension=pdo_mysql" descomentado.
 ### Installation
 
 1. Clone the repo
