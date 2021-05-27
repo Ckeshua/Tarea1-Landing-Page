@@ -24,13 +24,8 @@
         </div>
         <canvas id="canvas">
         </canvas>
-        <div class="output">
-            <img id="photo" alt="The screen capture will appear in this box.">
-        </div>
-        <p>
-            Visit our article <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos"> Taking still photos with WebRTC</a> to learn more about the technologies used here.
-        </p>
     </div>
+    <a href="../storage/app/public/">
 </body>
 
 
@@ -109,7 +104,7 @@
             context.fillStyle = "#AAA";
             context.fillRect(0, 0, canvas.width, canvas.height);
 
-            var data = canvas.toDataURL('image/png');
+            var data = canvas.toDataURL('image/jpg');
             photo.setAttribute('src', data);
         }
 
@@ -126,11 +121,28 @@
                 canvas.height = height;
                 context.drawImage(video, 0, 0, width, height);
 
-                var data = canvas.toDataURL('image/png');
+                var data = canvas.toDataURL('image/jpg');
                 photo.setAttribute('src', data);
+                Saveinstorage();
             } else {
                 clearphoto();
             }
+        }
+
+        function Saveinstorage() {
+            var canvas = document.getElementById('canvas');
+            var dataurl = canvas.toDataURL('image/jpg');
+            $.ajax({
+                type: "POST",
+                url: "guardarimg",
+                data: {
+                    imgBase64: dataurl
+                }
+            }).done(function(o) {
+                console.log('saved');
+
+                // Do here whatever you want.
+            });
         }
 
         // Set up our event listener to run the startup process

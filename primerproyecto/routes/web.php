@@ -24,6 +24,7 @@ Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
 
 
 Route::get('/', [PDFController::class, 'iniciopdf']);
+Route::post('/', [PDFController::class, 'guardarimg'])->name("guardarimg");
 
 Route::get('/loged', function (){
     return view ('welcome');
