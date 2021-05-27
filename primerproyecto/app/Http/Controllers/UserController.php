@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function _construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function showUsers($id){
         $users = User::findorFail($id);
         dd($users);

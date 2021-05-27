@@ -23,6 +23,9 @@ class PDFController extends Controller
      *@return \Illuminate\Http\Response
 
      */
+    public function iniciopdf(){
+        return view ('Tomarfoto');
+    }
 
     public function generatePDF()
 

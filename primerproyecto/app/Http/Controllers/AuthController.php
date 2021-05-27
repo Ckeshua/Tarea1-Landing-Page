@@ -14,24 +14,18 @@ class AuthController extends Controller
 
     public function intentos(Request $request)
     {   
-        ($request ->validate([
+        
+        /* $nombre = request('email'); */
+        dd(Auth::attempt([
 
-            'email' => 'required',
-            'password' => 'required'
+            'email' => $request->email,
+            'password' => $request->password 
         ]));
-        $nombre = request('email');
-        if(isset($_COOKIE["block".$nombre])){
+        
+        /* else {if(isset($_COOKIE["block".$nombre])){
             $error = "El rut $nombre esta bloqueado por 1 minuto";
             return view('login')->with("error", "$error");
         }
-        else {
-            if(Auth::attempt([
-
-                'email' => $request->email,
-                'password' => $request->password 
-            ])){
-                return redirect("/loged");
-            }
             else {
                 if(isset($_COOKIE["$nombre"])){
                     $cont = $_COOKIE["$nombre"];
@@ -49,7 +43,6 @@ class AuthController extends Controller
                     setcookie($nombre, 1, time() + 120);
                     return redirect('/');
                 }
-            }
-        }
+            }*/
+        } 
     }
-}

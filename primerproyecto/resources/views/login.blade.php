@@ -9,7 +9,7 @@
         echo '<div class="alert alert-success">Usuario bloqueado durante 1 minuto</div>';;
     }
     ?>
-    <form action="/" method="post">
+    <form action="{{route('intentos')}}" method="post">
         @csrf
         <input type="email" name="email" placeholder="email" value="{{old('email')}}">
         <input type="password" name="contra" placeholder="••••••••••" value="{{old('contra')}}">

@@ -19,9 +19,11 @@ Route::get('/users/create', [UserController::class,'CrearUsuario']);
 Route::post('/users/create', [UserController::class,'GuardarUsuario'])->name('guardarUs');
 
 
-Route::get('/', function(){
-    return view('login');
-});
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
+
+
+Route::get('/', [PDFController::class, 'iniciopdf']);
 
 Route::get('/loged', function (){
     return view ('welcome');
