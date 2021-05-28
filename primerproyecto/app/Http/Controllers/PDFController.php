@@ -31,10 +31,19 @@ class PDFController extends Controller
         $data = ['title' => 'Welcome to PDF'];
 
         $pdf = PDF::loadView('myPDF', $data);
+        
+        $pdf_download = $pdf->download('documento_escaneado.pdf');
 
-
-        return $pdf->download('documento_escaneado.pdf');
-
+        $dir = new \DirectoryIterator(dirname('../storage/app/public/yareyare.jpg'));
+        $file_names = array();
+        foreach ($dir as $fileinfo){
+            if (!$fileinfo->isDot()) {
+                $filename = $fileinfo->getFilename();
+                $delete_path = "../storage/app/public/$filename";
+                unlink($delete_path);
+            }
+        }
+        return $pdf_download;
     }
 
 }
