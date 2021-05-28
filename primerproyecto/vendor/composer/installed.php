@@ -6,7 +6,11 @@
     'aliases' => 
     array (
     ),
+<<<<<<< HEAD
     'reference' => '1ff0fd9ea8fe4529397716eeb90173c3f12ff17d',
+=======
+    'reference' => 'da177a9fb6fcea2d5ee533a7ad3bb55b6320deb1',
+>>>>>>> Rama-Eduardo
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -440,6 +444,15 @@
         0 => 'v8.37.0',
       ),
     ),
+    'intervention/image' => 
+    array (
+      'pretty_version' => '2.5.1',
+      'version' => '2.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'abbf18d5ab8367f96b3205ca3c89fb2fa598c69e',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -463,7 +476,11 @@
       'aliases' => 
       array (
       ),
+<<<<<<< HEAD
       'reference' => '1ff0fd9ea8fe4529397716eeb90173c3f12ff17d',
+=======
+      'reference' => 'da177a9fb6fcea2d5ee533a7ad3bb55b6320deb1',
+>>>>>>> Rama-Eduardo
     ),
     'laravel/sail' => 
     array (
