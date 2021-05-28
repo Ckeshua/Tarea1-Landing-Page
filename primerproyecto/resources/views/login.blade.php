@@ -12,7 +12,7 @@
     <form action="{{route('intentos')}}" method="post">
         @csrf
         <input type="email" name="email" placeholder="email" value="{{old('email')}}">
-        <input type="password" name="contra" placeholder="••••••••••" value="{{old('contra')}}">
+        <input type="password" name="password" placeholder="••••••••••" value="{{old('password')}}">
         <button class="btn btn-primary btn-block">
             Enviar
 

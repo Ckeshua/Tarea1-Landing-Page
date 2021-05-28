@@ -21,7 +21,7 @@ Route::post('/users/create', [UserController::class,'GuardarUsuario'])->name('gu
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
-
+Route::post('/Cerrando',[AuthController::class, 'CerrarS'])->name('CerrarS');
 
 Route::get('/', [PDFController::class, 'iniciopdf']);
 Route::post('/', [PDFController::class, 'guardarimg'])->name("guardarimg");

@@ -24,6 +24,16 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="/login"style=font-size:20px>Inicio Sesion <span class="sr-only"></span></a>
+          @auth
+          <a> Solo se ve si logeado</a>
+          <form method ="post" action="{{route('CerrarS')}}">
+          @csrf
+          <button type="submit">Cerrar sesion </button>
+          </form>
+          @endauth
+          @guest
+          <a> Solo se ve si no logeado</a>
+          @endguest
         </li>
         
       </ul>

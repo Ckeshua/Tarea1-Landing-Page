@@ -32,7 +32,7 @@ class UserController extends Controller
 
         $user = new User;
         $user->email =$request->email;
-        $user->password = Hash::make($request->password);
+        $user->password = bcrypt($request->password . 'salt');
         $user->save();
         return redirect()->back()->with('exito', 'El usuario ha sido agregado con exito');  
     }
