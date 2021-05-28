@@ -55,7 +55,7 @@
 
       <thead>
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Scansnap_S1500_001_%285460070526%29.jpg" alt="Escaner" width="204" height="135">
-        <p style="font-size:30px"> ¡Implementa esta tecnologia en escaners y nunca volveras atras!  
+        <p style="font-size:30px"> ¡Implementa esta tecnologia en escaners y nunca volveras atrastest!  
         <p style="font-size:30px">Instalacion facil y sencilla de solo 3 pasos:</p> 
               <p style="font-size:30px">1-.Contactarnos </p> 
               <p style="font-size:30px">2-.Permitirnos añadir nuestra tecnologia</p> 
