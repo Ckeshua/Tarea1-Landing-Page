@@ -197,6 +197,8 @@
             /* remind that 'data' is the response of the AjaxController */
             success: function(data) {
                 $(".writeinfo").append(data.msg);
+                $(".writeinfo").append("aca").append(data.msg2);
+                $(".writeinfo").append("aca2").append(data.msg3);
             }
         });
     });
