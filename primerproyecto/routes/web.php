@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +14,21 @@ use App\Http\Controllers\PDFController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/users/user/{id}', [UserController::class, 'showUsers']);
+Route::get('/users/create', [UserController::class,'CrearUsuario']);
+Route::post('/users/create', [UserController::class,'GuardarUsuario'])->name('guardarUs');
 
-Route::get('/', function () {
-    return view('login');
+
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
+Route::post('/Cerrando',[AuthController::class, 'CerrarS'])->name('CerrarS');
+
+Route::get('/', [PDFController::class, 'iniciopdf']);
+Route::post('/', [PDFController::class, 'guardarimg'])->name("guardarimg");
+
+Route::get('/loged', function (){
+    return view ('welcome');
 });
 
-Route::post('/', [AuthController::class, "intentos"]);
 
 Route::get('generate-pdf',[PDFController::class, "generatePDF"]);   //[PDFController::class, "intentos"]
