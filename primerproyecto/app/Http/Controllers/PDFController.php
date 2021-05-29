@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Storage;
 use PDF;
 
   
@@ -29,10 +30,11 @@ class PDFController extends Controller
 
     public function guardarimg(Request $request)
 {
-    $image = ImageManager::make($request->get('imgBase64'));
-    $image->save('public/bar.jpg');
-
-    return redirect('/');
+    $response = array(
+        'status' => 'success',
+        'msg' => $request->get('imgBase64'),
+    );
+    return response()->json($response); 
 }
 
 

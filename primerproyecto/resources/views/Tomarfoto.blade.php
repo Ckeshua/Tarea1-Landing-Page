@@ -1,33 +1,79 @@
 @extends('welcome')
 
+
+
 @section('content')
 
 <head>
     <title>WebRTC: Still photo capture demo</title>
     <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="main.css" type="text/css" media="all">
     <script src="capture.js">
     </script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header>
+        <!--mokup-->
+        <div>
+            <div>
+
+                <div class="container">
+                    <div class="col text-center" style="margin-top:8%">
+
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Seleccionar nivel de archivo</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+
+
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Seleccionar tipo de archivo</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <div class="col text-center">
+
+                <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
+
+                <button type="button" class="btn btn-success"> SUBIR </button>
+
+
+    </header>
     <div class="contentarea">
-        <h1>
-            MDN - WebRTC: Still photo capture demo
-        </h1>
-        <p>
-            This example demonstrates how to set up a media stream using your built-in webcam, fetch an image from that stream, and create a PNG using that image.
-        </p>
+
+
         <div class="camera">
             <video id="video">Video stream not available.</video>
-            <button id="startbutton">Take photo</button>
-        </div>
-        <canvas id="canvas">
-        </canvas>
-    </div>
-    <a href="../storage/app/public/">
-</body>
 
+        </div>
+        <form>
+            <canvas id="canvas">
+            </canvas>
+        </form>
+
+    </div>
+    <input class="getinfo"></input>
+    <button class="postbutton">Post via ajax!</button>
+    <div class="writeinfo"></div>
+</body>
 
 <script>
     (function() {
@@ -123,32 +169,38 @@
 
                 var data = canvas.toDataURL('image/jpg');
                 photo.setAttribute('src', data);
-                Saveinstorage();
+
             } else {
                 clearphoto();
             }
-        }
-
-        function Saveinstorage() {
-            var canvas = document.getElementById('canvas');
-            var dataurl = canvas.toDataURL('image/jpg');
-            $.ajax({
-                type: "POST",
-                url: "guardarimg",
-                data: {
-                    imgBase64: dataurl
-                }
-            }).done(function(o) {
-                console.log('saved');
-
-                // Do here whatever you want.
-            });
         }
 
         // Set up our event listener to run the startup process
         // once loading is complete.
         window.addEventListener('load', startup, false);
     })();
+    $("#startbutton").click(function() {
+
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var canvas = document.getElementById('canvas');
+        var dataURL = canvas.toDataURL();
+
+        $.ajax({
+            /* the route pointing to the post function */
+            url: '{{route("guardarimg")}}',
+            type: 'POST',
+            /* send the csrf-token and the input to the controller */
+            data: {
+                _token: CSRF_TOKEN,
+                imgBase64: dataURL
+            },
+            /* remind that 'data' is the response of the AjaxController */
+            success: function(data) {
+                $(".writeinfo").append(data.msg);
+            }
+        });
+    });
+
 </script>
 
 

@@ -14,7 +14,8 @@ class AuthController extends Controller
     public function intentos(Request $request)
     {   
         
-        $nombre = request('email');
+        $nombre = $request->get('email');
+        $nombre=substr($nombre,0,strpos($nombre,'.'));
         if(Auth::attempt([
 
             'email' => $request->email,
@@ -23,8 +24,6 @@ class AuthController extends Controller
         {
             return redirect('/loged');
         }
-        
-        
         else 
         {
             if(isset($_COOKIE["block".$nombre]))
@@ -38,6 +37,7 @@ class AuthController extends Controller
                 {
                     $cont = $_COOKIE["$nombre"];
                     $cont++;
+                    echo '$cont';
                     setcookie($nombre, $cont, time() + 120);
                     if($cont >= 3)
                     {
