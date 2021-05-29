@@ -180,7 +180,9 @@
         window.addEventListener('load', startup, false);
     })();
     $("#startbutton").click(function() {
+        clearTimeout( $(this).data('timer'))
 
+        var timer = setTimeout(function() {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var canvas = document.getElementById('canvas');
         var dataURL = canvas.toDataURL();
@@ -201,7 +203,10 @@
                 $(".writeinfo").append("aca2").append(data.msg3);
             }
         });
-    });
+    }, 500);
+    $(this).data('timer', timer);
+});
+    
 
 </script>
 
