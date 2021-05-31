@@ -53,27 +53,27 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
-Proyecto de diseno de pagina con scroll y login.
-* scroll ubicado en la ruta /
-* login ubicado en la ruta /login
+## Sobre el Proyecto
+Proyecto de diseño de pagina con scroll y login.
+* Scroll ubicado en la ruta ```/```
+* Login ubicado en la ruta ```/login```
 
-### Prerequisites
-* Instalar php y laravel
-  [instruction link](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
-* Instalar xampp para mysql y apache
-* Verificar que en el directorio de instalacion de php, exactamente en /tools/php80 el .ini tenga la linea 'extension=pdo_mysql' y la linea 'extension=gd' descomentada(sin el ;)
-* Abrir powershell como admin y luego dirigirse a la ubicacion del proyecto y ingresar php artisan migrate
-### Installation
+### Prerequisitos
+* Instalar PHP y [Laravel](https://laravel.com/)
+* [Instrucciones Blackboard](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
+* Instalar [XAMPP](https://www.apachefriends.org/es/index.html) para MySQL y Apache
+* Verificar que en el directorio de instalacion de php, exactamente en ```/tools/php80``` el .ini tenga la linea ```'extension=pdo_mysql'``` y la linea ```'extension=gd'``` Sin ";"
+* Abrir powershell como admin y luego dirigirse a la ubicacion del proyecto y ingresar ```php artisan migrate```
+### Instalacion
 
 1. Clone the repo
    ```sh
    git clone https://github.com/Ckeshua/Tarea1.git
    ```
-* 2. Iniciar el servidor con php artisan serve
+* 2. Iniciar el servidor con ```php artisan serve```
 
 
-### Built With
+### Construido con
 
 * [Boostrap](https://getbootstrap.com/)
 * [Laravel](https://laravel.com/)
@@ -82,7 +82,7 @@ Proyecto de diseno de pagina con scroll y login.
 
 
 <!-- Contacto -->
-## Contact
+## Contacto
 
 * David Barcia (https://github.com/Zailarx5)
 * Julio Ferreira [Developer](https://github.com/JulioFe)
