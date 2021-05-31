@@ -59,15 +59,18 @@ Proyecto de diseno de pagina con scroll y login.
 * login ubicado en la ruta /login
 
 ### Prerequisites
-* Install php and laravel
+* Instalar php y laravel
   [instruction link](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
-* Use a php artisan serve command
+* Instalar xampp para mysql y apache
+* Verificar que en el directorio de instalacion de php, exactamente en /tools/php80 el .ini tenga la linea 'extension=pdo_mysql' y la linea 'extension=gd' descomentada(sin el ;)
+* Abrir powershell como admin y luego dirigirse a la ubicacion del proyecto y ingresar php artisan migrate
 ### Installation
 
 1. Clone the repo
    ```sh
    git clone https://github.com/Ckeshua/Tarea1.git
    ```
+* 2. Iniciar el servidor con php artisan serve
 
 
 ### Built With
