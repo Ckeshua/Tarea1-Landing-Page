@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function login(){
-        return view('login');
+        return view('welcome');
     }
 
     public function intentos(Request $request)
@@ -17,10 +17,11 @@ class AuthController extends Controller
         
         $nombre = $request->get('email');
         $nombre=substr($nombre,0,strpos($nombre,'.'));
+        
         if(isset($_COOKIE["block".$nombre]))
         {
             $error = "El rut $nombre esta bloqueado por 1 minuto";
-            return view('login')->with("error", "$error");
+            return view('welcome')->with("error", "$error");
         }
         else 
         {
@@ -30,18 +31,17 @@ class AuthController extends Controller
                 'password' => $request->password . 'salt' 
             ]))
             {
-                return redirect('/loged');
+                return redirect('/home');
             }
             if(isset($_COOKIE["$nombre"]))
             {
                 $cont = $_COOKIE["$nombre"];
                 $cont++;
-                echo '$cont';
                 setcookie($nombre, $cont, time() + 120);
                 if($cont >= 3)
                 {
                     setcookie("block".$nombre, $cont, time() + 60);
-                    return view('login')->with("error", "$error");
+                    
                 }
                 else 
                 {

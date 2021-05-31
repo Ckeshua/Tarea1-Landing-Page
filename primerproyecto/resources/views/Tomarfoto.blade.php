@@ -34,7 +34,7 @@
                         </select>
 
 
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px">
                             <option selected>Seleccionar tipo de archivo</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -49,7 +49,7 @@
 
 
             </div>
-            <div class="col text-center">
+            <div class="col text-center" style="margin-top:40px">
 
                 <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
 
@@ -70,8 +70,6 @@
         </form>
 
     </div>
-    <input class="getinfo"></input>
-    <button class="postbutton">Post via ajax!</button>
     <div class="writeinfo"></div>
     <a href="generate-pdf">Generar pdf</a>
 </body>

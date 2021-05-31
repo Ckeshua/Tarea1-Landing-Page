@@ -23,12 +23,13 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
 Route::post('/Cerrando',[AuthController::class, 'CerrarS'])->name('CerrarS');
 
-Route::get('/', [PDFController::class, 'iniciopdf']);
-Route::post('/', [PDFController::class, 'guardarimg'])->name("guardarimg");
-Route::get('generate-pdf',[PDFController::class, "generatePDF"]);
+Route::get('/home/escaner', [PDFController::class, 'iniciopdf']);
+Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guardarimg");
+Route::get('/home/generate-pdf',[PDFController::class, "generatePDF"]);
 
-Route::get('/loged', function (){
-    return view ('welcome');
+Route::get('/home', function(){
+    return view('home');
 });
+
 
    //[PDFController::class, "intentos"]
