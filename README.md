@@ -32,20 +32,20 @@
   <summary><h2 style="display: inline-block">Tabla de Contenidos</h2></summary>
   <ol>
     <li>
-      <a href="#about-the-project">Sobre el Proyecto</a>
+      <a href="#Sobre-el-Proyecto">Sobre el Proyecto</a>
       <ul>
-        <li><a href="#built-with">Programado</a></li>
+        <li><a href="#Construido-Con">Programado</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Inicializando</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisitos</a></li>
-        <li><a href="#installation">Instalacion</a></li>
+        <li><a href="#prerequisitos">Prerequisitos</a></li>
+        <li><a href="#Instalacion">Instalacion</a></li>
       </ul>
     </li>
     <li><a href="#usage">Uso</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#contacto">Contacto</a></li>
     <li><a href="#acknowledgements">Agradecimientos</a></li>
   </ol>
 </details>
@@ -53,24 +53,28 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
-Proyecto de diseno de pagina con scroll y login.
-* scroll ubicado en la ruta /
-* login ubicado en la ruta /login
+## Sobre el Proyecto
+Proyecto de diseño de pagina con scroll y login.
+* Scroll ubicado en la ruta ```/```
+* Login ubicado en la ruta ```/login```
 
-### Prerequisites
-* Install php and laravel
-  [instruction link](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
-* Use a php artisan serve command
-### Installation
+### Prerequisitos
+* Instalar PHP y [Laravel](https://laravel.com/)
+* [Instrucciones Blackboard](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
+* Instalar [XAMPP](https://www.apachefriends.org/es/index.html) para MySQL y Apache
+* Crear una base de datos con nombre proyectophp
+* Verificar que en el directorio de instalacion de php, exactamente en ```/tools/php80``` el ```php.ini``` tenga la linea ```'extension=pdo_mysql'``` y la linea ```'extension=gd'``` Sin ";"
+* Abrir powershell como admin y luego dirigirse a la ubicacion del proyecto y ingresar ```php artisan migrate```
+### Instalacion
 
 1. Clone the repo
    ```sh
    git clone https://github.com/Ckeshua/Tarea1.git
    ```
+* 2. Iniciar el servidor con ```php artisan serve```
 
 
-### Built With
+### Construido Con
 
 * [Boostrap](https://getbootstrap.com/)
 * [Laravel](https://laravel.com/)
@@ -79,7 +83,7 @@ Proyecto de diseno de pagina con scroll y login.
 
 
 <!-- Contacto -->
-## Contact
+## Contacto
 
 * David Barcia (https://github.com/Zailarx5)
 * Julio Ferreira [Developer](https://github.com/JulioFe)
