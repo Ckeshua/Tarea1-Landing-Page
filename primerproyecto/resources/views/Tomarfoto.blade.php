@@ -181,28 +181,31 @@
         window.addEventListener('load', startup, false);
     })();
     $("#startbutton").click(function() {
+        clearTimeout( $(this).data('timer'))
 
+        var timer = setTimeout(function() {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var canvas = document.getElementById('canvas');
         var dataURL = canvas.toDataURL();
 
         $.ajax({
-            /* the route pointing to the post function */
+            
             url: '{{route("guardarimg")}}',
             type: 'POST',
-            /* send the csrf-token and the input to the controller */
+       
             data: {
                 _token: CSRF_TOKEN,
                 imgBase64: dataURL
             },
-            /* remind that 'data' is the response of the AjaxController */
             success: function(data) {
                 $(".writeinfo").append(data.msg);
                 $(".writeinfo").append("aca").append(data.msg2);
                 $(".writeinfo").append("aca2").append(data.msg3);
             }
         });
-    });
+    }, 500);
+    $(this).data('timer', timer);
+});
 
 </script>
 
