@@ -22,15 +22,6 @@
   <img src="{{asset('/logomenu1.png')}}" class="img-fluid" alt="...">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-
-
-
-    </ul>
     @auth
     <ul class="nav justify-content-end">
 
@@ -87,8 +78,7 @@
       </li>
       @endguest
     </ul>
-  </div>
-
+  </button>
 </nav>
 
 
