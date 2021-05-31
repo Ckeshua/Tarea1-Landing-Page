@@ -73,6 +73,7 @@
     <input class="getinfo"></input>
     <button class="postbutton">Post via ajax!</button>
     <div class="writeinfo"></div>
+    <a href="generate-pdf">Generar pdf</a>
 </body>
 
 <script>

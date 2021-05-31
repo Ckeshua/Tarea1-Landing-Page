@@ -25,10 +25,10 @@ Route::post('/Cerrando',[AuthController::class, 'CerrarS'])->name('CerrarS');
 
 Route::get('/', [PDFController::class, 'iniciopdf']);
 Route::post('/', [PDFController::class, 'guardarimg'])->name("guardarimg");
+Route::get('generate-pdf',[PDFController::class, "generatePDF"]);
 
 Route::get('/loged', function (){
     return view ('welcome');
 });
 
-
-Route::get('generate-pdf',[PDFController::class, "generatePDF"]);   //[PDFController::class, "intentos"]
+   //[PDFController::class, "intentos"]

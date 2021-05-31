@@ -7,8 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="{{ storage_path('app/public/planetas.webp') }}" style="width: 200px; height: 200px">
-    <img src="{{ storage_path('app/public/Amongus.jpg') }}" style="width: 400px; height: 200px">
-    <img src="{{ storage_path('app/public/yareyare.jpg') }}">
+    <?php
+    $dir = new DirectoryIterator(dirname(storage_path('app/public/yareyare.jpg')));
+    $dir_names = array();
+    foreach ($dir as $fileinfo) {
+        if (!$fileinfo->isDot()) {
+            $filename = $fileinfo->getFilename();
+            array_push($dir_names,"$filename");
+        }
+    }
+    ?>
+    @foreach ($dir_names as $name)
+        <?php $real_name = "../storage/app/public/$name"?>
+        <img src="<?php echo $real_name ?>" style="width: 700px; height: 700px">
+    @endforeach
 </body>
 </html>

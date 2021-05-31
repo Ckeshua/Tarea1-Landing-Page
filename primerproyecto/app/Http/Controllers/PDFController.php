@@ -34,7 +34,7 @@ class PDFController extends Controller
     $image = str_replace('data:image/png;base64,', '', $image);
     $image = str_replace(' ', '+', $image);
     $imageName = 'image'.time().'.jpg';
-    $path = public_path()."/img/designs/" . $imageName;  
+    $path = "../storage/app/public/" . $imageName;  
     file_put_contents($path, base64_decode($image));
     $response = array(
         'status' => 'success',
@@ -54,10 +54,19 @@ class PDFController extends Controller
         $data = ['title' => 'Welcome to PDF'];
 
         $pdf = PDF::loadView('myPDF', $data);
+        
+        $pdf_download = $pdf->download('documento_escaneado.pdf');
 
-
-        return $pdf->download('documento_escaneado.pdf');
-
+        $dir = new \DirectoryIterator(dirname('../storage/app/public/yareyare.jpg'));
+        $file_names = array();
+        foreach ($dir as $fileinfo){
+            if (!$fileinfo->isDot()) {
+                $filename = $fileinfo->getFilename();
+                $delete_path = "../storage/app/public/$filename";
+                unlink($delete_path);
+            }
+        }
+        return $pdf_download;
     }
 
 }
