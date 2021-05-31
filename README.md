@@ -32,16 +32,16 @@
   <summary><h2 style="display: inline-block">Tabla de Contenidos</h2></summary>
   <ol>
     <li>
-      <a href="#about-the-project">Sobre el Proyecto</a>
+      <a href="#Sobre-el-Proyecto">Sobre el Proyecto</a>
       <ul>
-        <li><a href="#built-with">Programado</a></li>
+        <li><a href="#Construido-Con">Programado</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Inicializando</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisitos</a></li>
-        <li><a href="#installation">Instalacion</a></li>
+        <li><a href="#prerequisitos">Prerequisitos</a></li>
+        <li><a href="#Instalacion">Instalacion</a></li>
       </ul>
     </li>
     <li><a href="#usage">Uso</a></li>
@@ -73,7 +73,7 @@ Proyecto de diseño de pagina con scroll y login.
 * 2. Iniciar el servidor con ```php artisan serve```
 
 
-### Construido con
+### Construido Con
 
 * [Boostrap](https://getbootstrap.com/)
 * [Laravel](https://laravel.com/)
