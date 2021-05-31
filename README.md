@@ -45,7 +45,7 @@
       </ul>
     </li>
     <li><a href="#usage">Uso</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#contacto">Contacto</a></li>
     <li><a href="#acknowledgements">Agradecimientos</a></li>
   </ol>
 </details>
