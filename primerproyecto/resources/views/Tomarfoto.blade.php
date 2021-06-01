@@ -28,17 +28,17 @@
 
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                             <option selected>Seleccionar nivel de archivo</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">Secretario para arriba</option>
+                            <option value="2">Trabajador de planta para arriba</option>
+                            <option value="3">Practicante para arriba</option>
                         </select>
 
 
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px">
                             <option selected>Seleccionar tipo de archivo</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">Contrato</option>
+                            <option value="2">boletas</option>
+                            <option value="3">Tipo 3</option>
                         </select>
 
                     </div>
@@ -196,9 +196,7 @@
                 imgBase64: dataURL
             },
             success: function(data) {
-                $(".writeinfo").append(data.msg);
-                $(".writeinfo").append("aca").append(data.msg2);
-                $(".writeinfo").append("aca2").append(data.msg3);
+                //$(".writeinfo").append(data.msg);
             }
         });
     }, 500);
