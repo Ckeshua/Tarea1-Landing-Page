@@ -13,6 +13,12 @@
                     @csrf
 					<input class="text email" type="email" name="email" placeholder="Email" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="cargo">
+                            <option selected>Posicion</option>
+                            <option value="Secretario">Secretario</option>
+                            <option value="Trabajador de planta">Trabajador de planta</option>
+                            <option value="Practicante">Practicante</option>
+                    </select>
 					<div class="wthree-text">
 						<label class="anim">
 							<input type="checkbox" class="checkbox" required="">

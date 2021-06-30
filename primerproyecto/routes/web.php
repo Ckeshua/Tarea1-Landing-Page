@@ -14,21 +14,28 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/users/user/{id}', [UserController::class, 'showUsers']);
-Route::get('/users/create', [UserController::class,'CrearUsuario']);
-Route::post('/users/create', [UserController::class,'GuardarUsuario'])->name('guardarUs');
 
-
-Route::get('/login', [AuthController::class, 'login']);
-Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
-Route::post('/Cerrando',[AuthController::class, 'CerrarS'])->name('CerrarS');
-
-Route::get('/', [PDFController::class, 'iniciopdf']);
-Route::post('/', [PDFController::class, 'guardarimg'])->name("guardarimg");
-
-Route::get('/loged', function (){
-    return view ('welcome');
+Route::group(['middleware' => ['can:guardarUs']], function () {
+    Route::get('/users/user/{id}', [UserController::class, 'showUsers']);
+    Route::get('/users/create', [UserController::class, 'CrearUsuario']);
+    Route::post('/users/create', [UserController::class, 'GuardarUsuario'])->name('guardarUs');
 });
+
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
+Route::post('/Cerrando', [AuthController::class, 'CerrarS'])->name('CerrarS');
+
+Route::group(['middleware' => 'auth'] ,function () {
+    Route::get('/home/escaner', [PDFController::class, 'iniciopdf'])->middleware('auth');
+    Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guardarimg")->middleware('auth');
+    Route::get('/home/generate-pdf', [PDFController::class, "generatePDF"])->middleware('auth');
+});
+
+
+Route::get('/home', function () {
+    return view('home');
+})->middleware('auth');
 
 
 Route::get('generate-pdf',[PDFController::class, "generatePDF"]);   //[PDFController::class, "intentos"]
