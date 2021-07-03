@@ -64,7 +64,7 @@ Proyecto de diseño de pagina con scroll y login.
 * Instalar [XAMPP](https://www.apachefriends.org/es/index.html) para MySQL y Apache
 * Crear una base de datos con nombre proyectophp
 * Verificar que en el directorio de instalacion de php, exactamente en ```/tools/php80``` el ```php.ini``` tenga la linea ```'extension=pdo_mysql'``` y la linea ```'extension=gd'``` Sin ";"
-* Abrir powershell como admin y luego dirigirse a la ubicacion del proyecto y ingresar ```php artisan migrate``` '''php artisan migrate:fresh --seed'''
+* Abrir powershell como admin y luego dirigirse a la ubicacion del proyecto y ingresar ```php artisan migrate``` ```php artisan migrate:fresh --seed```
 ### Instalacion
 
 1. Clone the repo
