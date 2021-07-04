@@ -35,7 +35,7 @@ class PDFController extends Controller
     $image = str_replace('data:image/png;base64,', '', $image);
     $image = str_replace(' ', '+', $image);
     $imageName = 'image'.time().'.jpg';
-    $path = "../storage/app/public/" . $imageName;  
+    $path = "../storage/imgs/" . $imageName;  
     file_put_contents($path, base64_decode($image));
     $response = array(
         'status' => 'success',
@@ -49,8 +49,6 @@ class PDFController extends Controller
     public function eliminarimg(Request $request)
 {
     $path = $request->get('path');
-    $err = '<script>console.log("hola")</script>';
-    echo $err;
     unlink($path);
     $response = array(
         'status' => 'success'
@@ -67,18 +65,20 @@ class PDFController extends Controller
 
         $pdf = PDF::loadView('myPDF', $data);
         
+        Storage::put('_'.time().'.pdf', $pdf->output());
+
         $pdf_download = $pdf->download('documento_escaneado.pdf');
 
-        $dir = new \DirectoryIterator(dirname('../storage/app/public/yareyare.jpg'));
+        $dir = new \DirectoryIterator(dirname('../storage/imgs/yareyare.jpg'));
         $file_names = array();
         foreach ($dir as $fileinfo){
             if (!$fileinfo->isDot()) {
                 $filename = $fileinfo->getFilename();
-                $delete_path = "../storage/app/public/$filename";
+                $delete_path = "../storage/imgs/$filename";
                 unlink($delete_path);
             }
         }
-        return $pdf_download;
+        return view('home');
     }
 
 }

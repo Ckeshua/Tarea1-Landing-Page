@@ -25,7 +25,7 @@ Route::post('/Cerrando',[AuthController::class, 'CerrarS'])->name('CerrarS');
 Route::get('/home/escaner', [PDFController::class, 'iniciopdf']);
 Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guardarimg");
 //Route::post('/home/escaner', [PDFController::class, 'eliminarimg'])->name("eliminarimg");
-Route::get('/home/generate-pdf',[PDFController::class, "generatePDF"]);
+Route::get('/home/generate-pdf',[PDFController::class, "generatePDF"])->name("generatePDF");
 Route::post('/home/delete_img', [PDFController::class, "eliminarimg"])->name("eliminarimg");
 
 

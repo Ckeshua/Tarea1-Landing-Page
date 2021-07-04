@@ -52,9 +52,7 @@
             <div class="col text-center" style="margin-top:40px">
 
                 <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
-
-                <button type="button" class="btn btn-success"> SUBIR </button>
-
+                <a href="generate-pdf" class="btn btn-success"> SUBIR </a>
 
     </header>
     <div class="contentarea" style="display: flex; flex-wrap: wrap;">

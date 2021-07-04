@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    $dir = new DirectoryIterator(dirname(storage_path('app/public/yareyare.jpg')));
+    $dir = new DirectoryIterator(dirname(storage_path('imgs/yareyare.jpg')));
     $dir_names = array();
     foreach ($dir as $fileinfo) {
         if (!$fileinfo->isDot()) {
@@ -18,7 +18,7 @@
     }
     ?>
     @foreach ($dir_names as $name)
-        <?php $real_name = "../storage/app/public/$name"?>
+        <?php $real_name = "../storage/imgs/$name"?>
         <img src="<?php echo $real_name ?>" style="width: 700px; height: 700px">
     @endforeach
 </body>
