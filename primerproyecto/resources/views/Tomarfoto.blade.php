@@ -57,29 +57,28 @@
 
 
     </header>
-    <div class="contentarea">
+    <div class="contentarea" style="display: flex; flex-wrap: wrap;">
 
 
         <div class="camera">
             <video id="video">Video stream not available.</video>
 
         </div>
-        <form>
+        <form style="display: inline;">
             <canvas id="canvas">
             </canvas>
         </form>
-
+        <div style="max-width: 500px; min-width: 340px;"></div>
+        <div id="writeinfo" style="overflow: auto; width:340px; height: 190px;"></div>
     </div>
-    <div class="writeinfo"></div>
-    <a href="generate-pdf">Generar pdf</a>
+    <a href="generate-pdf" style="background-color: black; padding:10px; color: white; text-decoration: none; display: block; max-width: 300px; margin: auto; text-align: center;">Generar pdf</a>
 </body>
 
 <script>
     (function() {
         // The width and height of the captured photo. We will set the
         // width to the value defined here, but the height will be
-        // calculated based on the aspect ratio of the input stream.
-
+        // calculated based on the aspect ratio of the input stream.        
         var width = 320; // We will scale the photo width to this
         var height = 0; // This will be computed based on the input stream
 
@@ -185,7 +184,7 @@
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var canvas = document.getElementById('canvas');
         var dataURL = canvas.toDataURL();
-
+        
         $.ajax({
             
             url: '{{route("guardarimg")}}',
@@ -196,7 +195,40 @@
                 imgBase64: dataURL
             },
             success: function(data) {
-                //$(".writeinfo").append(data.msg);
+                let container = document.getElementById('writeinfo');
+                let img = document.createElement('img');
+                let btn = document.createElement('button');
+                btn.innerText = "Click para eliminar";
+                img.src = data.msg;
+                img.id = data.msg2;
+                btn.id = data.msg2;
+                btn.style.backgroundColor = "red";
+                btn.style.width = "300px";
+                btn.style.color = "white";
+                img.style.margin = '6px 0px 0px 0px';
+                container.appendChild(img);
+                container.appendChild(btn);
+                //img.style.display = 'block'
+                btn.addEventListener('click', () => {
+                    container.removeChild(document.getElementById(img.id));
+                    container.removeChild(document.getElementById(btn.id));
+                    $.ajax({
+                        url: '{{route("eliminarimg")}}',
+                        type: 'POST',
+                        data: {
+                            _token: CSRF_TOKEN,
+                            img_name:data.msg2,
+                            path:data.msg3
+                        },
+                        success: function(data) {
+                            console.log("1");
+                        }
+                        
+                    })
+                    
+                    //img.parentNode.removeChild(img);
+                })
+                
             }
         });
     }, 500);

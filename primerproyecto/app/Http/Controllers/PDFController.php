@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+  
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Storage;
 use PDF;
-
-  
+use SebastianBergmann\Environment\Console;
 
 class PDFController extends Controller
 
@@ -45,6 +46,17 @@ class PDFController extends Controller
     return response()->json($response); 
 }
 
+    public function eliminarimg(Request $request)
+{
+    $path = $request->get('path');
+    $err = '<script>console.log("hola")</script>';
+    echo $err;
+    unlink($path);
+    $response = array(
+        'status' => 'success'
+    );
+    return response()->json($response);
+}
 
 
     public function generatePDF()
