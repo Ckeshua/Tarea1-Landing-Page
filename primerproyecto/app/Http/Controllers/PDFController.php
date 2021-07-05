@@ -41,6 +41,8 @@ class PDFController extends Controller
     $response = array(
         'status' => 'success',
         'msg' => $request->get('imgBase64'),
+        'msg2' => $imageName,
+        'msg3' => $path
     );
     return response()->json($response); 
 }

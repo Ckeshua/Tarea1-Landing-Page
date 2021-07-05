@@ -24,7 +24,7 @@
             <div>
 
                 <div class="container">
-                    <form method="post"class="col text-center" style="margin-top:8%">
+                    <form method="post" class="col text-center" style="margin-top:8%">
 
                         <select id="seguridad" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
                             <option selected>Seleccionar nivel de archivo</option>
@@ -41,9 +41,9 @@
                             <option value="Tipo 3">Tipo 3</option>
                         </select>
 
-                        
 
-                    </form>
+
+                    
 
                 </div>
 
@@ -55,19 +55,19 @@
 
                 <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
                 <a href="generate-pdf" class="btn btn-success"> SUBIR </a>
+                </form>
 
     </header>
     <div class="contentarea" style="display: flex; flex-wrap: wrap;">
 
-
-        <div class="camera">
+        <form style="display: inline;">
+            <canvas style="display: none;" id="canvas">
+            </canvas>
+        </form>
+        <div  style="margin-left:470px">
             <video id="video">Video stream not available.</video>
 
         </div>
-        <form style="display: inline;">
-            <canvas id="canvas">
-            </canvas>
-        </form>
         <div style="max-width: 500px; min-width: 340px;"></div>
         <div id="writeinfo" style="overflow: auto; width:340px; height: 190px;"></div>
     </div>
@@ -177,63 +177,62 @@
         window.addEventListener('load', startup, false);
     })();
     $("#startbutton").click(function() {
-        clearTimeout( $(this).data('timer'))
+        clearTimeout($(this).data('timer'))
 
         var timer = setTimeout(function() {
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        var canvas = document.getElementById('canvas');
-        var dataURL = canvas.toDataURL();
-        
-        $.ajax({
-            
-            url: '{{route("guardarimg")}}',
-            type: 'POST',
-       
-            data: {
-                _token: CSRF_TOKEN,
-                imgBase64: dataURL
-            },
-            success: function(data) {
-                let container = document.getElementById('writeinfo');
-                let img = document.createElement('img');
-                let btn = document.createElement('button');
-                btn.innerText = "Click para eliminar";
-                img.src = data.msg;
-                img.id = data.msg2;
-                btn.id = data.msg2;
-                btn.style.backgroundColor = "red";
-                btn.style.width = "300px";
-                btn.style.color = "white";
-                img.style.margin = '6px 0px 0px 0px';
-                container.appendChild(img);
-                container.appendChild(btn);
-                //img.style.display = 'block'
-                btn.addEventListener('click', () => {
-                    container.removeChild(document.getElementById(img.id));
-                    container.removeChild(document.getElementById(btn.id));
-                    $.ajax({
-                        url: '{{route("eliminarimg")}}',
-                        type: 'POST',
-                        data: {
-                            _token: CSRF_TOKEN,
-                            img_name:data.msg2,
-                            path:data.msg3
-                        },
-                        success: function(data) {
-                            console.log("1");
-                        }
-                        
-                    })
-                    
-                    //img.parentNode.removeChild(img);
-                })
-                
-            }
-        });
-    }, 500);
-    $(this).data('timer', timer);
-});
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+            var canvas = document.getElementById('canvas');
+            var dataURL = canvas.toDataURL();
 
+            $.ajax({
+
+                url: '{{route("guardarimg")}}',
+                type: 'POST',
+
+                data: {
+                    _token: CSRF_TOKEN,
+                    imgBase64: dataURL
+                },
+                success: function(data) {
+                    let container = document.getElementById('writeinfo');
+                    let img = document.createElement('img');
+                    let btn = document.createElement('button');
+                    btn.innerText = "Click para eliminar";
+                    img.src = data.msg;
+                    img.id = data.msg2;
+                    btn.id = data.msg2;
+                    btn.style.backgroundColor = "red";
+                    btn.style.width = "300px";
+                    btn.style.color = "white";
+                    img.style.margin = '6px 0px 0px 0px';
+                    container.appendChild(img);
+                    container.appendChild(btn);
+                    //img.style.display = 'block'
+                    btn.addEventListener('click', () => {
+                        container.removeChild(document.getElementById(img.id));
+                        container.removeChild(document.getElementById(btn.id));
+                        $.ajax({
+                            url: '{{route("eliminarimg")}}',
+                            type: 'POST',
+                            data: {
+                                _token: CSRF_TOKEN,
+                                img_name: data.msg2,
+                                path: data.msg3
+                            },
+                            success: function(data) {
+                                console.log("1");
+                            }
+
+                        })
+
+                        //img.parentNode.removeChild(img);
+                    })
+
+                }
+            });
+        }, 500);
+        $(this).data('timer', timer);
+    });
 </script>
 
 
