@@ -73,8 +73,35 @@ Proyecto de diseño de pagina con scroll y login.
 * 3. Iniciar servidor con php artisan serve
 
 ### Uso
-[img src=“primerproyecto/storage/ScreenshotsProyect/paginaprinc.png">](primerproyecto/storage/ScreenshotsProyect/paginaprinc.png)
-[<img src="primerproyecto/storage/ScreenshotsProyect/paginaprinc.png" width=160>](primerproyecto/storage/ScreenshotsProyect/paginaprinc.png)
+* Para hacer uso de esta pagina siga estos simples pasos:
+* 1. Dirijase a el dropdown de login y ingrese sus credenciales
+[<img src="primerproyecto/storage/ScreenshotsProyect/paginaprinc.png" width=800>](primerproyecto/storage/ScreenshotsProyect/paginaprinc.png)
+* 2. Luego ingrese a "archivos" para ver el repositorio de archivos pdf que existen actualmente
+[<img src="primerproyecto/storage/ScreenshotsProyect/paginaprinc2.png" width=800>](primerproyecto/storage/ScreenshotsProyect/paginaprinc2.png)
+* 3. Para subir un documento presione el boton subir
+[<img src="primerproyecto/storage/ScreenshotsProyect/rep_archivos.png" width=800>](primerproyecto/storage/ScreenshotsProyect/rep_archivos.png)
+* 4. Con la seleccion de opciones de nivel de archivo puede seleccionar quienes podran ver los archivos
+[<img src="primerproyecto/storage/ScreenshotsProyect/Escanear1.png" width=800>](primerproyecto/storage/ScreenshotsProyect/Escanear1.png)
+* 5. Con esta seleccion de opciones puede seleccionar que tipo de archivo subirá
+[<img src="primerproyecto/storage/ScreenshotsProyect/Escanear2.png" width=800>](primerproyecto/storage/ScreenshotsProyect/Escanear2.png)
+* 6. En este cuadro puede ingresar el nombre que tendra el archivo (nombres repetidos son aceptados)
+[<img src="primerproyecto/storage/ScreenshotsProyect/Escanear3.png" width=800>](primerproyecto/storage/ScreenshotsProyect/Escanear3.png)
+* 7. Con este boton guarda lo que este mostrando la camara en ese momento
+[<img src="primerproyecto/storage/ScreenshotsProyect/Escanear4.png" width=800>](primerproyecto/storage/ScreenshotsProyect/Escanear4.png)
+* 8. Aqui se mostraran las imagenes que hayan sido escaneadas 
+[<img src="primerproyecto/storage/ScreenshotsProyect/Escanear5.png" width=800>](primerproyecto/storage/ScreenshotsProyect/Escanear5.png)
+* 9. Puede borrar la imagen escaneada con este boton
+[<img src="primerproyecto/storage/ScreenshotsProyect/Escanear6.png" width=800>](primerproyecto/storage/ScreenshotsProyect/Escanear6.png)
+* 10. Al darle a este boton procede a subir el PDF
+[<img src="primerproyecto/storage/ScreenshotsProyect/Escanear7.png" width=800>](primerproyecto/storage/ScreenshotsProyect/Escanear7.png)
+* 11. Aqui ya se muestra el archivo recien subido
+[<img src="primerproyecto/storage/ScreenshotsProyect/rep_arch_subido1.png" width=800>](primerproyecto/storage/ScreenshotsProyect/rep_arch_subido1.png)
+* 12. Puede usar el filtro para mostrar solo los PDF que son de alguna clase
+[<img src="primerproyecto/storage/ScreenshotsProyect/rep_arch_subido2.png" width=800>](primerproyecto/storage/ScreenshotsProyect/rep_arch_subido2.png)
+* 13. Luego de seleccionar una opcion debe apretar el boton que se muestra en la siguiente foto
+[<img src="primerproyecto/storage/ScreenshotsProyect/rep_arch_subido3.png" width=800>](primerproyecto/storage/ScreenshotsProyect/rep_arch_subido3.png)
+* 14. Aqui ya se muestran todos los documentos filtrados
+[<img src="primerproyecto/storage/ScreenshotsProyect/rep_arch_subido4.png" width=800>](primerproyecto/storage/ScreenshotsProyect/rep_arch_subido4.png)
 ### Construido Con
 
 * [Boostrap](https://getbootstrap.com/)
