@@ -27,20 +27,22 @@
                     <form method="get" action="generate-pdf" class="col text-center" style="margin-top:8%">
 
                         <select name="seguridad" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
-                            <option selected>Seleccionar nivel de archivo</option>
+                            <option value='' disabled="disabled" selected='selected'>Seleccionar nivel de archivo</option>
                             <option value="Seguridad nivel 3">Secretario para arriba</option>
                             <option value="Seguridad nivel 2">Trabajador de planta para arriba</option>
                             <option value="Seguridad nivel 1">Practicante para arriba</option>
+                            
                         </select>
 
 
                         <select name="Tipode" class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px" required>
-                            <option selected>Seleccionar tipo de archivo</option>
+                            <option value='' disabled="disabled" selected='selected'>Seleccionar tipo de archivo</option>
                             <option value="Contrato">Contrato</option>
                             <option value="Boletas">boletas</option>
                             <option value="Tipo 3">Tipo 3</option>
+                            
                         </select>
-                        <input type="text" name="contrato">
+                        <input type="text" name="contrato" required>
                         
 
                         <button class="btn btn-success" style="margin-top: 15px;"> SUBIR </button>
@@ -60,12 +62,12 @@
             <canvas style="display: none;" id="canvas">
             </canvas>
         </form>
-        <div  style="margin-left:470px">
+        <div  style="margin-left:310px">
             <video id="video">Video stream not available.</video>
 
         </div>
         <div style="max-width: 500px; min-width: 340px;"></div>
-        <div id="writeinfo" style="overflow: auto; width:340px; height: 190px;"></div>
+        <div id="writeinfo" style="overflow: auto; width:500px; height: 450px;"></div>
     </div>
 </body>
 
@@ -74,7 +76,7 @@
         // The width and height of the captured photo. We will set the
         // width to the value defined here, but the height will be
         // calculated based on the aspect ratio of the input stream.        
-        var width = 320; // We will scale the photo width to this
+        var width = 480; // We will scale the photo width to this
         var height = 0; // This will be computed based on the input stream
 
         // |streaming| indicates whether or not we're currently streaming
@@ -198,7 +200,7 @@
                     img.id = data.msg2;
                     btn.id = data.msg2;
                     btn.style.backgroundColor = "red";
-                    btn.style.width = "300px";
+                    btn.style.width = "480px";
                     btn.style.color = "white";
                     img.style.margin = '6px 0px 0px 0px';
                     container.appendChild(img);

@@ -84,7 +84,7 @@ class PDFController extends Controller
 
             $pdf = PDF::loadView('myPDF', $data);
             Storage::put($name.time().'.pdf', $pdf->output());
-
+            
             $dir = new \DirectoryIterator(dirname('../storage/imgs/yareyare.jpg'));
             $file_names = array();
             foreach ($dir as $fileinfo){
