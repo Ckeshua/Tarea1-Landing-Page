@@ -61,32 +61,47 @@ class PDFController extends Controller
     public function generatePDF()
 
     {
-
-        $data = ['title' => 'Welcome to PDF'];
-
-        $pdf = PDF::loadView('myPDF', $data);
-        
-        Storage::put('_'.time().'.pdf', $pdf->output());
-
-        $pdf_download = $pdf->download('documento_escaneado.pdf');
-
-        $dir = new \DirectoryIterator(dirname('../storage/imgs/yareyare.jpg'));
-        $file_names = array();
-        foreach ($dir as $fileinfo){
-            if (!$fileinfo->isDot()) {
-                $filename = $fileinfo->getFilename();
-                $delete_path = "../storage/imgs/$filename";
-                unlink($delete_path);
+        if(isset($_GET["filter"])) {
+            $filter = $_GET["filter"];
+            $NOMBRE_ARCHIVOS = array();
+            $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
+            foreach ($ARCHIVOS as $DIRECTORIO) {
+                $ARCHIVO = pathinfo($DIRECTORIO);
+                if(strpos($ARCHIVO['filename'], $_GET['filter']) !== false){
+                    array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
+                }
             }
         }
-        $NOMBRE_ARCHIVOS = array();
+        else {
+            if(isset($_GET["contrato"])){
+                $name = $_GET["contrato"];
+            }
+            
+            $data = ['title' => 'Welcome to PDF'];
 
-        $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
-        foreach ($ARCHIVOS as $DIRECTORIO) {
-            $ARCHIVO = pathinfo($DIRECTORIO);
-            array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
+            $pdf = PDF::loadView('myPDF', $data);
+            
+            Storage::put($name.time().'.pdf', $pdf->output());
+
+            $pdf_download = $pdf->download('documento_escaneado.pdf');
+
+            $dir = new \DirectoryIterator(dirname('../storage/imgs/yareyare.jpg'));
+            $file_names = array();
+            foreach ($dir as $fileinfo){
+                if (!$fileinfo->isDot()) {
+                    $filename = $fileinfo->getFilename();
+                    $delete_path = "../storage/imgs/$filename";
+                    unlink($delete_path);
+                }
+            }
+            $NOMBRE_ARCHIVOS = array();
+
+            $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
+            foreach ($ARCHIVOS as $DIRECTORIO) {
+                $ARCHIVO = pathinfo($DIRECTORIO);
+                array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
+            }
         }
-
         return view('parte3', compact('NOMBRE_ARCHIVOS'));
         return view('parte3');
     }

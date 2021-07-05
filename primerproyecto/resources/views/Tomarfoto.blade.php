@@ -24,7 +24,7 @@
             <div>
 
                 <div class="container">
-                    <form method="post"class="col text-center" style="margin-top:8%">
+                    <form method="get" action="generate-pdf" class="col text-center" style="margin-top:8%">
 
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                             <option selected>Seleccionar nivel de archivo</option>
@@ -35,13 +35,10 @@
 
 
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px">
-                            <option selected>Seleccionar tipo de archivo</option>
-                            <option value="1">Contrato</option>
-                            <option value="2">boletas</option>
-                            <option value="3">Tipo 3</option>
+                            <input type="text" name="contrato">
                         </select>
 
-                        
+                        <button class="btn btn-success"> SUBIR </button>
 
                     </form>
 
@@ -54,7 +51,7 @@
             <div class="col text-center" style="margin-top:40px">
 
                 <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
-                <a href="generate-pdf" class="btn btn-success"> SUBIR </a>
+                
 
     </header>
     <div class="contentarea" style="display: flex; flex-wrap: wrap;">
