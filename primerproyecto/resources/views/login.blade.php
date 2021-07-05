@@ -11,8 +11,8 @@
     ?>
     <form action="{{route('intentos')}}" method="post">
         @csrf
-        <input type="email" name="email" placeholder="email" value="{{old('email')}}">
-        <input type="password" name="password" placeholder="••••••••••" value="{{old('password')}}">
+        <input type="email" name="email" placeholder="email" value="{{old('email')}}" required>
+        <input type="password" name="password" placeholder="••••••••••" value="{{old('password')}}" required>
         <button class="btn btn-primary btn-block">
             Enviar
 

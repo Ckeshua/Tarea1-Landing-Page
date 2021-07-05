@@ -23,7 +23,7 @@ class AuthController extends Controller
             'password' => $request->password . 'salt' 
         ]))
         {
-            return redirect('/loged');
+            return redirect('/home');
         }
         else 
         {

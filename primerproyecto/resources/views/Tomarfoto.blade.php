@@ -26,19 +26,19 @@
                 <div class="container">
                     <div class="col text-center" style="margin-top:8%">
 
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <select id="seguridad" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
                             <option selected>Seleccionar nivel de archivo</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Seguridad nivel 3">Secretario para arriba</option>
+                            <option value="Seguridad nivel 2">Trabajador de planta para arriba</option>
+                            <option value="Seguridad nivel 1">Practicante para arriba</option>
                         </select>
 
 
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <select id="Tipode" class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px" required>
                             <option selected>Seleccionar tipo de archivo</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Contrato">Contrato</option>
+                            <option value="Boletas">boletas</option>
+                            <option value="Tipo 3">Tipo 3</option>
                         </select>
 
                     </div>
@@ -51,28 +51,26 @@
             </div>
             <div class="col text-center">
 
-                <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
+                <div class="col text-center" style="margin-top:40px">
 
-                <button type="button" class="btn btn-success"> SUBIR </button>
-
+                    <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
+                    <a href="generate-pdf" class="btn btn-success"> SUBIR </a>
 
     </header>
-    <div class="contentarea">
+    <div class="contentarea" style="display: flex; flex-wrap: wrap;">
 
 
         <div class="camera">
             <video id="video">Video stream not available.</video>
 
         </div>
-        <form>
+        <form style="display: inline;">
             <canvas id="canvas">
             </canvas>
         </form>
-
+        <div style="max-width: 500px; min-width: 340px;"></div>
+        <div id="writeinfo" style="overflow: auto; width:340px; height: 190px;"></div>
     </div>
-    <input class="getinfo"></input>
-    <button class="postbutton">Post via ajax!</button>
-    <div class="writeinfo"></div>
 </body>
 
 <script>
@@ -180,34 +178,32 @@
         window.addEventListener('load', startup, false);
     })();
     $("#startbutton").click(function() {
-        clearTimeout( $(this).data('timer'))
+        clearTimeout($(this).data('timer'))
 
         var timer = setTimeout(function() {
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        var canvas = document.getElementById('canvas');
-        var dataURL = canvas.toDataURL();
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+            var canvas = document.getElementById('canvas');
+            var dataURL = canvas.toDataURL();
 
-        $.ajax({
-            /* the route pointing to the post function */
-            url: '{{route("guardarimg")}}',
-            type: 'POST',
-            /* send the csrf-token and the input to the controller */
-            data: {
-                _token: CSRF_TOKEN,
-                imgBase64: dataURL
-            },
-            /* remind that 'data' is the response of the AjaxController */
-            success: function(data) {
-                $(".writeinfo").append(data.msg);
-                $(".writeinfo").append("aca").append(data.msg2);
-                $(".writeinfo").append("aca2").append(data.msg3);
-            }
-        });
-    }, 500);
-    $(this).data('timer', timer);
-});
-    
-
+            $.ajax({
+                /* the route pointing to the post function */
+                url: '{{route("guardarimg")}}',
+                type: 'POST',
+                /* send the csrf-token and the input to the controller */
+                data: {
+                    _token: CSRF_TOKEN,
+                    imgBase64: dataURL
+                },
+                /* remind that 'data' is the response of the AjaxController */
+                success: function(data) {
+                    $(".writeinfo").append(data.msg);
+                    $(".writeinfo").append("aca").append(data.msg2);
+                    $(".writeinfo").append("aca2").append(data.msg3);
+                }
+            });
+        }, 500);
+        $(this).data('timer', timer);
+    });
 </script>
 
 
