@@ -73,7 +73,7 @@ Proyecto de diseño de pagina con scroll y login.
 * 3. Iniciar servidor con php artisan serve
 
 ### Uso
-primerproyecto/storage/ScreenshotsProyect/paginaprinc.png
+<img src=“primerproyecto/storage/ScreenshotsProyect/paginaprinc.png">
 
 ### Construido Con
 
