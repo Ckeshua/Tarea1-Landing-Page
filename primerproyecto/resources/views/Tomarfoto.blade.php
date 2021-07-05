@@ -43,7 +43,7 @@
                         <input type="text" name="contrato">
                         
 
-                        <button class="btn btn-success"> SUBIR </button>
+                        <button class="btn btn-success" style="margin-top: 15px;"> SUBIR </button>
 
                     </form>
                 </div>

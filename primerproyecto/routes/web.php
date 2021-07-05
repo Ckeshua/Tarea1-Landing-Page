@@ -30,15 +30,17 @@ Route::post('/login', [AuthController::class, 'intentos'])->name('intentos');
 Route::post('/Cerrando', [AuthController::class, 'CerrarS'])->name('CerrarS');
 
 Route::group(['middleware' => 'auth'] ,function () {
-    Route::get('/home/escaner', [PDFController::class, 'iniciopdf'])->middleware('auth');
-    Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guardarimg")->middleware('auth');
-    Route::get('/home/generate-pdf', [PDFController::class, "generatePDF"])->middleware('auth');
+    Route::get('/home/escaner', [PDFController::class, 'iniciopdf']);
+    Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guardarimg");
+    Route::get('/home/generate-pdf', [PDFController::class, "generatePDF"])->name("generatePDF");
     Route::get('listar_archivos', [TestController::class, "ListarArchivos"])->name('ListarArchivos');
     Route::get('visualizar_archivos/{nombre}', [TestController::class, "VisualizarArchivos"])->name('VisualizarArchivos');
-    Route::post('/home/delete_img', [PDFController::class, "eliminarimg"])->name("eliminarimg");
+    Route::post('/home/generate-pdf',[PDFController::class, "filtrar"])->name("filtrar");
 });
 
-Route::post('/', [AuthController::class, "intentos"]);
+
+//Route::post('/home/escaner', [PDFController::class, 'eliminarimg'])->name("eliminarimg");
+
 
 
 

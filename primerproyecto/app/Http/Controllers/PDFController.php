@@ -58,32 +58,32 @@ class PDFController extends Controller
 }
 
 
-    public function generatePDF()
-
+    public function filtrar()
     {
-        if(isset($_GET["filter"])) {
-            $filter = $_GET["filter"];
+        if(isset($_REQUEST["filter"])) {
+            $filter = $_REQUEST["filter"];
             $NOMBRE_ARCHIVOS = array();
             $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
             foreach ($ARCHIVOS as $DIRECTORIO) {
                 $ARCHIVO = pathinfo($DIRECTORIO);
-                if(strpos($ARCHIVO['filename'], $_GET['filter']) !== false){
+                if(strpos($ARCHIVO['filename'], $_REQUEST['filter']) !== false){
                     array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
                 }
             }
         }
-        else {
-            if(isset($_GET["contrato"])){
-                $name = $_GET["contrato"];
-            }
-            
+        return view('parte3', compact('NOMBRE_ARCHIVOS'));
+    }
+
+    public function generatePDF()
+
+    {
+        
+        if(isset($_GET["contrato"])){
+            $name = $_GET["contrato"];
             $data = ['title' => 'Welcome to PDF'];
 
             $pdf = PDF::loadView('myPDF', $data);
-            
             Storage::put($name.time().'.pdf', $pdf->output());
-
-            $pdf_download = $pdf->download('documento_escaneado.pdf');
 
             $dir = new \DirectoryIterator(dirname('../storage/imgs/yareyare.jpg'));
             $file_names = array();
@@ -102,8 +102,19 @@ class PDFController extends Controller
                 $ARCHIVO = pathinfo($DIRECTORIO);
                 array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
             }
+            return view('parte3', compact('NOMBRE_ARCHIVOS'));
         }
-        return view('parte3', compact('NOMBRE_ARCHIVOS'));
-    }
+        else {
+            
+            $NOMBRE_ARCHIVOS = array();
+
+            $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
+            foreach ($ARCHIVOS as $DIRECTORIO) {
+                $ARCHIVO = pathinfo($DIRECTORIO);
+                array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
+            }
+            return view('parte3', compact('NOMBRE_ARCHIVOS'));
+        }
+}
 
 }
