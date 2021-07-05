@@ -1,0 +1,10 @@
+
+#div_video{margin-left:310px}
+#writeinfo{overflow: auto; width:500px; height: 450px;}
+.hola{width:480px;}
+@media only screen and (max-width:1600px){
+    #div_video{margin:auto}
+    #writeinfo{margin:auto}
+    #video{width:360px}
+    .hola{width:360px}
+}

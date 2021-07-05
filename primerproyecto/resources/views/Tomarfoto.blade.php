@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="main.css" type="text/css" media="all">
     <script src="capture.js">
     </script>
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+   
 </head>
 
 <body>
@@ -62,12 +62,11 @@
             <canvas style="display: none;" id="canvas">
             </canvas>
         </form>
-        <div  style="margin-left:310px">
+        <div id="div_video" >
             <video id="video">Video stream not available.</video>
-
         </div>
         <div style="max-width: 500px; min-width: 340px;"></div>
-        <div id="writeinfo" style="overflow: auto; width:500px; height: 450px;"></div>
+        <div id="writeinfo" ></div>
     </div>
 </body>
 
@@ -75,7 +74,7 @@
     (function() {
         // The width and height of the captured photo. We will set the
         // width to the value defined here, but the height will be
-        // calculated based on the aspect ratio of the input stream.        
+        // calculated based on the aspect ratio of the input stream.
         var width = 480; // We will scale the photo width to this
         var height = 0; // This will be computed based on the input stream
 
@@ -199,8 +198,9 @@
                     img.src = data.msg;
                     img.id = data.msg2;
                     btn.id = data.msg2;
+                    img.classList.add('hola');
+                    btn.classList.add('hola');
                     btn.style.backgroundColor = "red";
-                    btn.style.width = "480px";
                     btn.style.color = "white";
                     img.style.margin = '6px 0px 0px 0px';
                     container.appendChild(img);

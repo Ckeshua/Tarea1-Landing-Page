@@ -18,11 +18,13 @@ use GuzzleHttp\Psr7\Request;
 |
 */
 
-Route::group(['middleware' => ['can:guardarUs']], function () {
-    Route::get('/users/user/{id}', [UserController::class, 'showUsers']);
-    Route::get('/users/create', [UserController::class, 'CrearUsuario']);
-    Route::post('/users/create', [UserController::class, 'GuardarUsuario'])->name('guardarUs');
-});
+    Route::group(['middleware' => ['can:guardarUs']], function () {
+        Route::get('/users/user/{id}', [UserController::class, 'showUsers']);
+        Route::get('/users/create', [UserController::class, 'CrearUsuario']);
+        Route::post('/users/create', [UserController::class, 'GuardarUsuario'])->name('guardarUs');
+    });
+
+
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');

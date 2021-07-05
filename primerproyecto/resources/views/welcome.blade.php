@@ -11,13 +11,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+  <link href = {{ asset("bootstrap/css/bootstrap.css") }} rel="stylesheet" />
+  <link href = {{ asset("bootstrap/css/prueba.css") }} rel="stylesheet" />
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <img src="{{asset('/partelogo.png')}}" class="img-fluid" alt="..." style="margin-left:18%">
-  <img src="{{asset('/logomenu1.png')}}" class="img-fluid" alt="..." >
+  <img href = "/home" src="{{asset('/partelogo.png')}}" class="img-fluid" alt="..." style="margin-left:18%">
+  <img href = "/home" src="{{asset('/logomenu1.png')}}" class="img-fluid" alt="..." >
 
   @auth
 

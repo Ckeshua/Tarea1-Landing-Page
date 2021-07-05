@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use PDF;
 use SebastianBergmann\Environment\Console;
+use App\Models\Archivos;
 
 class PDFController extends Controller
 
@@ -81,9 +82,16 @@ class PDFController extends Controller
         if(isset($_GET["contrato"])){
             $name = $_GET["contrato"];
             $data = ['title' => 'Welcome to PDF'];
+            $archivo= new Archivos;
 
+            $archivo->seguridad = $_GET["seguridad"];
+            $archivo->tipode = $_GET["Tipode"];
+            
             $pdf = PDF::loadView('myPDF', $data);
-            Storage::put($name.time().'.pdf', $pdf->output());
+            $name = $name.time().'.pdf';
+            $archivo->Nombre_Arch = $name;
+            $archivo->save();
+            Storage::put($name, $pdf->output());
             
             $dir = new \DirectoryIterator(dirname('../storage/imgs/yareyare.jpg'));
             $file_names = array();
