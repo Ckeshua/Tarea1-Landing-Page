@@ -44,7 +44,7 @@ Route::post('/', [AuthController::class, "intentos"]);
 
 Route::get('/home', function () {
     return view('home');
-})->middleware('auth');
+});
 
 
 Route::get('generate-pdf',[PDFController::class, "generatePDF"]);   //[PDFController::class, "intentos"]

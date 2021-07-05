@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function login(){
-        return view('welcome');
+        return redirect('/home');
     }
 
     public function intentos(Request $request)
@@ -45,13 +45,13 @@ class AuthController extends Controller
                 }
                 else 
                 {
-                    return redirect('/login');
+                    return redirect('/home');
                 }
             }
             else 
             {
                 setcookie($nombre, 1, time() + 120);
-                return redirect('/login');
+                return redirect('/home');
             }
         }
     } 
