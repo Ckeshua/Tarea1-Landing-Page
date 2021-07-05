@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'] ,function () {
     Route::get('listar_archivos', [TestController::class, "ListarArchivos"])->name('ListarArchivos');
     Route::get('visualizar_archivos/{nombre}', [TestController::class, "VisualizarArchivos"])->name('VisualizarArchivos');
     Route::post('/home/generate-pdf',[PDFController::class, "filtrar"])->name("filtrar");
+    Route::post('/home/delete_img', [PDFController::class, "eliminarimg"])->name("eliminarimg");
 });
 
 

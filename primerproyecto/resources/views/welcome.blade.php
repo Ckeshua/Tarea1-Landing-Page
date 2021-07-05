@@ -26,7 +26,7 @@
   <ul class="nav justify-content-end" style="margin-left:30%">
 
     <li class="nav-item">
-      <a class="nav-link" href="/home">Archivos</a>
+      <a class="nav-link" href="/home/generate-pdf">Archivos</a>
 
     </li>
     <li class="nav-item">
