@@ -74,7 +74,7 @@ Proyecto de diseño de pagina con scroll y login.
 
 ### Uso
 [img src=“primerproyecto/storage/ScreenshotsProyect/paginaprinc.png">](primerproyecto/storage/ScreenshotsProyect/paginaprinc.png)
-
+[<img src="primerproyecto/storage/ScreenshotsProyect/paginaprinc.png" width=160>](primerproyecto/storage/ScreenshotsProyect/paginaprinc.png)
 ### Construido Con
 
 * [Boostrap](https://getbootstrap.com/)
