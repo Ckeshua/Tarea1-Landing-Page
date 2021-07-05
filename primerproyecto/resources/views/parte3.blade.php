@@ -17,16 +17,17 @@
     <nav class="navbar navbar-light bg-light mb-4" style="background-color: #b5cdd4 !important;">
         <div class="container-fluid">
             <a class="navbar-brand"></a>
-            <form class="d-flex">
+            <div class="d-flex">
 
                 <label class="col-form-label me-2" style="font-weight: bold;">Filtro:</label>
-                    <form action="listar_archivos" method="get">
+                    <form action="generate-pdf" method="post">
+                        @csrf
                         <input type="text" name="filter">
-                        <button class="btn btn-success"></button>
+                        <button class="btn btn-success" style="padding: 0;">S</button>
                     </form>
                 </select>
 
-            </form>
+            </div>
         </div>
     </nav>
 

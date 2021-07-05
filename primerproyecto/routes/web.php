@@ -27,6 +27,7 @@ Route::get('/home/escaner', [PDFController::class, 'iniciopdf']);
 Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guardarimg");
 //Route::post('/home/escaner', [PDFController::class, 'eliminarimg'])->name("eliminarimg");
 Route::get('/home/generate-pdf',[PDFController::class, "generatePDF"])->name("generatePDF");
+Route::post('/home/generate-pdf',[PDFController::class, "filtrar"])->name("filtrar");
 Route::post('/home/delete_img', [PDFController::class, "eliminarimg"])->name("eliminarimg");
 
 

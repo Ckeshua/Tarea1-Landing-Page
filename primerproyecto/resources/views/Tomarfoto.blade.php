@@ -26,19 +26,12 @@
                 <div class="container">
                     <form method="get" action="generate-pdf" class="col text-center" style="margin-top:8%">
 
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                            <option selected>Seleccionar nivel de archivo</option>
-                            <option value="1">Secretario para arriba</option>
-                            <option value="2">Trabajador de planta para arriba</option>
-                            <option value="3">Practicante para arriba</option>
-                        </select>
+                        
+                        <input type="text" name="nivel" class="form-select form-select-sm">
+        
+                        <input type="text" name="contrato" class="form-select form-select-sm" style="margin-top: 40px;">
 
-
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px">
-                            <input type="text" name="contrato">
-                        </select>
-
-                        <button class="btn btn-success"> SUBIR </button>
+                        <button class="btn btn-success" style="margin-top: 15px;"> SUBIR </button>
 
                     </form>
 
