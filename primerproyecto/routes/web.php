@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Psr7\Request;
 
@@ -28,6 +29,9 @@ Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guarda
 Route::get('/home/generate-pdf',[PDFController::class, "generatePDF"])->name("generatePDF");
 Route::post('/home/delete_img', [PDFController::class, "eliminarimg"])->name("eliminarimg");
 
+
+Route::get('listar_archivos', [TestController::class, "ListarArchivos"])->name('ListarArchivos');
+Route::get('visualizar_archivos/{nombre}', [TestController::class, "VisualizarArchivos"])->name('VisualizarArchivos');
 
 Route::get('/home', function(){
     return view('home');

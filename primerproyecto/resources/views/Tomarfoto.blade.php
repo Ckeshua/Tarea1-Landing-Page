@@ -24,7 +24,7 @@
             <div>
 
                 <div class="container">
-                    <div class="col text-center" style="margin-top:8%">
+                    <form method="post"class="col text-center" style="margin-top:8%">
 
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                             <option selected>Seleccionar nivel de archivo</option>
@@ -41,7 +41,9 @@
                             <option value="3">Tipo 3</option>
                         </select>
 
-                    </div>
+                        
+
+                    </form>
 
                 </div>
 
@@ -69,7 +71,6 @@
         <div style="max-width: 500px; min-width: 340px;"></div>
         <div id="writeinfo" style="overflow: auto; width:340px; height: 190px;"></div>
     </div>
-    <a href="generate-pdf" style="background-color: black; padding:10px; color: white; text-decoration: none; display: block; max-width: 300px; margin: auto; text-align: center;">Generar pdf</a>
 </body>
 
 <script>

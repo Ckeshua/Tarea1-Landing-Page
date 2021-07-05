@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use PDF;
 use SebastianBergmann\Environment\Console;
 
@@ -78,7 +79,16 @@ class PDFController extends Controller
                 unlink($delete_path);
             }
         }
-        return view('home');
+        $NOMBRE_ARCHIVOS = array();
+
+        $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
+        foreach ($ARCHIVOS as $DIRECTORIO) {
+            $ARCHIVO = pathinfo($DIRECTORIO);
+            array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
+        }
+
+        return view('parte3', compact('NOMBRE_ARCHIVOS'));
+        return view('parte3');
     }
 
 }
