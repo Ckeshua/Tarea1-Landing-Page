@@ -24,9 +24,9 @@
             <div>
 
                 <div class="container">
-                    <form method="post" class="col text-center" style="margin-top:8%">
+                    <form method="get" action="generate-pdf" class="col text-center" style="margin-top:8%">
 
-                        <select id="seguridad" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
+                        <select name="seguridad" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
                             <option selected>Seleccionar nivel de archivo</option>
                             <option value="Seguridad nivel 3">Secretario para arriba</option>
                             <option value="Seguridad nivel 2">Trabajador de planta para arriba</option>
@@ -34,19 +34,23 @@
                         </select>
 
 
-                        <select id="Tipode" class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px" required>
+                        <select name="Tipode" class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px" required>
                             <option selected>Seleccionar tipo de archivo</option>
                             <option value="Contrato">Contrato</option>
                             <option value="Boletas">boletas</option>
                             <option value="Tipo 3">Tipo 3</option>
                         </select>
+                        <input type="text" name="contrato">
+                        
+
+                        <button class="btn btn-success"> SUBIR </button>
+
                     </form>
                 </div>
             </div>
             <div class="col text-center" style="margin-top:40px">
 
                 <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
-                <a href="generate-pdf" class="btn btn-success"> SUBIR </a>
                 
 
     </header>
@@ -222,7 +226,7 @@
 
                 }
             });
-        }, 500);
+        }, 10);
         $(this).data('timer', timer);
     });
 </script>

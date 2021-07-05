@@ -20,12 +20,10 @@
             <form class="d-flex">
 
                 <label class="col-form-label me-2" style="font-weight: bold;">Filtro:</label>
-
-                <select class="form-select">
-                    <option selected>Ningun filtro</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <form action="listar_archivos" method="get">
+                        <input type="text" name="filter">
+                        <button class="btn btn-success"></button>
+                    </form>
                 </select>
 
             </form>
