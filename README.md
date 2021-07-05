@@ -44,7 +44,7 @@
         <li><a href="#Instalacion">Instalacion</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
+    <li><a href="#uso">Uso</a></li>
     <li><a href="#contacto">Contacto</a></li>
     <li><a href="#acknowledgements">Agradecimientos</a></li>
   </ol>
@@ -72,6 +72,8 @@ Proyecto de diseño de pagina con scroll y login.
 * 2. Abrir powershell y luego dirigirse a la ubicacion del proyecto e ingresar ```php artisan migrate``` ```php artisan migrate:fresh --seed```
 * 3. Iniciar servidor con php artisan serve
 
+### Uso
+primerproyecto/storage/ScreenshotsProyect/paginaprinc.png
 
 ### Construido Con
 
