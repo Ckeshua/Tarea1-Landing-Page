@@ -40,22 +40,14 @@
                             <option value="Boletas">boletas</option>
                             <option value="Tipo 3">Tipo 3</option>
                         </select>
-
-
-
-                    
-
+                    </form>
                 </div>
-
-
-
-
             </div>
             <div class="col text-center" style="margin-top:40px">
 
                 <button id="startbutton" type="button" class="btn btn-primary">ESCANEAR</button>
                 <a href="generate-pdf" class="btn btn-success"> SUBIR </a>
-                </form>
+                
 
     </header>
     <div class="contentarea" style="display: flex; flex-wrap: wrap;">
