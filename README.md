@@ -60,18 +60,17 @@ Proyecto de diseño de pagina con scroll y login.
 
 ### Prerequisitos
 * Instalar PHP y [Laravel](https://laravel.com/)
-* [Instrucciones Blackboard](https://unab.blackboard.com/bbcswebdav/pid-4658137-dt-content-rid-28156232_1/courses/INS232.202110.6640.TR/Taller2%20Instalaci%C3%B3nLaravel.pdf)
-* Instalar [XAMPP](https://www.apachefriends.org/es/index.html) para MySQL y Apache
+* [Instrucciones de como instalar en Blackboard](https://docs.google.com/document/d/1uRJtdrB-R47UZ-lCQ_U6D5TzM5Ks2g5dgLSSNG4xMIo/edit?usp=sharing)
 * Crear una base de datos con nombre proyectophp
 * Verificar que en el directorio de instalacion de php, exactamente en ```/tools/php80``` el ```php.ini``` tenga la linea ```'extension=pdo_mysql'``` y la linea ```'extension=gd'``` Sin ";"
-* Abrir powershell como admin y luego dirigirse a la ubicacion del proyecto y ingresar ```php artisan migrate``` ```php artisan migrate:fresh --seed```
 ### Instalacion
 
 1. Clone the repo
    ```sh
    git clone https://github.com/Ckeshua/Tarea1.git
    ```
-* 2. Iniciar el servidor con ```php artisan serve```
+* 2. Abrir powershell y luego dirigirse a la ubicacion del proyecto e ingresar ```php artisan migrate``` ```php artisan migrate:fresh --seed```
+* 3. Iniciar servidor con php artisan serve
 
 
 ### Construido Con
@@ -85,7 +84,7 @@ Proyecto de diseño de pagina con scroll y login.
 <!-- Contacto -->
 ## Contacto
 
-* David Barcia (https://github.com/Zailarx5)
+* David Barcia [Developer](https://github.com/Zailarx5)
 * Julio Ferreira [Developer](https://github.com/JulioFe)
 * Eduardo Mellado	[Scrum Master](https://github.com/Ckeshua)
 * Gustavo Orellana [Product Owner](https://github.com/Gaos700)
