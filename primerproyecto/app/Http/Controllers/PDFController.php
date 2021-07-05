@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\File;
 use PDF;
 use SebastianBergmann\Environment\Console;
 use App\Models\Archivos;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use App\Models\User;
 
 class PDFController extends Controller
 
@@ -65,10 +70,20 @@ class PDFController extends Controller
             $filter = $_REQUEST["filter"];
             $NOMBRE_ARCHIVOS = array();
             $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
-            foreach ($ARCHIVOS as $DIRECTORIO) {
-                $ARCHIVO = pathinfo($DIRECTORIO);
-                if(strpos($ARCHIVO['filename'], $_REQUEST['filter']) !== false){
-                    array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
+            $name_arch = $_REQUEST['filter'];
+            $arch_db = DB::select("select Nombre_Arch from archivos where tipode = ? ", [$name_arch]);
+            
+            for($i = 0; $i < count($arch_db); $i++) {
+                //$ARCHIVO = pathinfo($DIRECTORIO);
+                $arch_db_seguridad = DB::select("select seguridad from archivos where Nombre_Arch= ? ", [$arch_db[$i]->Nombre_Arch]);
+                if(Auth()->user()->can('Seguridad nivel 1') && $arch_db_seguridad[0]->seguridad=='Seguridad nivel 1'){
+                    array_push($NOMBRE_ARCHIVOS, $arch_db[$i]->Nombre_Arch);
+                }
+                elseif(Auth()->user()->can('Seguridad nivel 2') && $arch_db_seguridad[0]->seguridad=='Seguridad nivel 2'){
+                    array_push($NOMBRE_ARCHIVOS, $arch_db[$i]->Nombre_Arch);
+                }
+                elseif(Auth()->user()->can('Seguridad nivel 3') && $arch_db_seguridad[0]->seguridad=='Seguridad nivel 3'){
+                    array_push($NOMBRE_ARCHIVOS, $arch_db[$i]->Nombre_Arch);
                 }
             }
         }
@@ -88,10 +103,10 @@ class PDFController extends Controller
             $archivo->tipode = $_GET["Tipode"];
             
             $pdf = PDF::loadView('myPDF', $data);
-            $name = $name.time().'.pdf';
+            $name = $name.time();
             $archivo->Nombre_Arch = $name;
             $archivo->save();
-            Storage::put($name, $pdf->output());
+            Storage::put($name.'.pdf', $pdf->output());
             
             $dir = new \DirectoryIterator(dirname('../storage/imgs/yareyare.jpg'));
             $file_names = array();
@@ -119,7 +134,18 @@ class PDFController extends Controller
             $ARCHIVOS = File::files(storage_path() . '\app'.'\public'); //REMPLAZA \test por la carpeta que tiene los archivos que necesitas mostrar
             foreach ($ARCHIVOS as $DIRECTORIO) {
                 $ARCHIVO = pathinfo($DIRECTORIO);
-                array_push($NOMBRE_ARCHIVOS, $ARCHIVO['filename']);
+                $ARCHIVO = $ARCHIVO['filename'];
+                $arch_db = DB::select("select seguridad from archivos where Nombre_Arch= ? ", [$ARCHIVO]);
+                if(Auth()->user()->can('Seguridad nivel 1') && $arch_db[0]->seguridad=='Seguridad nivel 1'){
+                    array_push($NOMBRE_ARCHIVOS, $ARCHIVO);
+                }
+                elseif(Auth()->user()->can('Seguridad nivel 2') && $arch_db[0]->seguridad=='Seguridad nivel 2'){
+                    array_push($NOMBRE_ARCHIVOS, $ARCHIVO);
+                }
+                elseif(Auth()->user()->can('Seguridad nivel 3') && $arch_db[0]->seguridad=='Seguridad nivel 3'){
+                    array_push($NOMBRE_ARCHIVOS, $ARCHIVO);
+                }
+                
             }
             return view('parte3', compact('NOMBRE_ARCHIVOS'));
         }

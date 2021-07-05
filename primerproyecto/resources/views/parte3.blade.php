@@ -22,7 +22,13 @@
                 <label class="col-form-label me-2" style="font-weight: bold;">Filtro:</label>
                     <form action="generate-pdf" method="post">
                         @csrf
-                        <input type="text" name="filter">
+                        <select name="filter" class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px" required>
+                            <option value='' disabled="disabled" selected='selected'>Seleccionar tipo de archivo</option>
+                            <option value="Contrato">Contrato</option>
+                            <option value="Boletas">boletas</option>
+                            <option value="Tipo 3">Tipo 3</option>
+                            
+                        </select>
                         <button class="btn btn-success" style="padding: 0;">S</button>
                     </form>
                 </select>
