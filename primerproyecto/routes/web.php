@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use GuzzleHttp\Psr7\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +33,13 @@ Route::group(['middleware' => 'auth'] ,function () {
     Route::get('/home/escaner', [PDFController::class, 'iniciopdf'])->middleware('auth');
     Route::post('/home/escaner', [PDFController::class, 'guardarimg'])->name("guardarimg")->middleware('auth');
     Route::get('/home/generate-pdf', [PDFController::class, "generatePDF"])->middleware('auth');
+    Route::get('listar_archivos', [TestController::class, "ListarArchivos"])->name('ListarArchivos');
+    Route::get('visualizar_archivos/{nombre}', [TestController::class, "VisualizarArchivos"])->name('VisualizarArchivos');
+    Route::post('/home/delete_img', [PDFController::class, "eliminarimg"])->name("eliminarimg");
 });
+
+Route::post('/', [AuthController::class, "intentos"]);
+
 
 
 Route::get('/home', function () {
