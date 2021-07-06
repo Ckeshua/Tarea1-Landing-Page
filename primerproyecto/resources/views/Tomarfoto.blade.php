@@ -24,8 +24,8 @@
             <div>
 
                 <div class="container">
-                    <form method="get" action="generate-pdf" class="col text-center" style="margin-top:8%">
-
+                    <form method="get" action="generate-pdf" class="col text-center" style="margin-top:6%">
+                        <p>Seleccione uno de los siguientes <span style="color:red;">(*)</span></p>
                         <select name="seguridad" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
                             <option value='' disabled="disabled" selected='selected'>Seleccionar nivel de archivo</option>
                             <option value="Seguridad nivel 3">Secretario para arriba</option>
@@ -34,7 +34,7 @@
                             
                         </select>
 
-
+                        <p style="margin-top: 40px; margin-bottom:-30px">Seleccione uno de los siguientes <span style="color:red;">(*)</span></p>
                         <select name="Tipode" class="form-select form-select-sm" aria-label=".form-select-sm example" style="margin-top: 40px" required>
                             <option value='' disabled="disabled" selected='selected'>Seleccionar tipo de archivo</option>
                             <option value="Contrato">Contrato</option>
@@ -42,11 +42,12 @@
                             <option value="Tipo 3">Tipo 3</option>
                             
                         </select>
+                        <p style="margin-top: 20px; ">Ingrese algun nombre para el archivo PDF </p>
                         <input type="text" name="contrato" required>
                         
-
+                        
                         <button class="btn btn-success" style="margin-top: 15px;"> SUBIR </button>
-
+                        <p style="margin-top: 5px; "><span style="color:red;">(*)</span> Elementos marcados con este simbolo son obligatorios</p>
                     </form>
                 </div>
             </div>

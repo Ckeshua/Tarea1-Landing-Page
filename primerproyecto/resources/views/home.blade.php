@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col text-center" style="margin-top: 0px" >
-     <div class="jumbotron" style="margin-top:30px;background-image: url('/valdivia.png');height: 30vh">
+     <div class="jumbotron" style="margin-top:30px;background-image: url('/valdivia.png');height: 33vh">
      <h1 class="font-weight-bold" style="color: White;margin-top: 40px;font-size:90px">Scanfast</h1>
      <p class="font-weight-bold" style="color: White;margin-top: 40px;font-size:20px">ScanFast es un repositorio donde se puedan subir archivos pdf mediante el scanner de archivos físicos, permitiendo una visualización de estos archivos separados por filtro y nivel.</p>    
     </div>
