@@ -69,8 +69,8 @@ Proyecto de diseño de pagina con scroll y login.
    ```sh
    git clone https://github.com/Ckeshua/Tarea1.git
    ```
-* 2. Abrir powershell y luego dirigirse a la ubicacion del proyecto e ingresar ```php artisan migrate``` ```php artisan migrate:fresh --seed```
-* 3. Iniciar servidor con php artisan serve
+* 2. Abrir powershell y luego dirigirse a la ubicacion del proyecto e ingresar ```php artisan migrate``` y ```php artisan migrate:fresh --seed```
+* 3. Iniciar servidor con ```php artisan serve```
 
 ### Uso
 * Para hacer uso de esta pagina siga estos simples pasos:
