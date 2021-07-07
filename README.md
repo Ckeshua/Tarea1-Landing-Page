@@ -60,7 +60,7 @@ Proyecto de diseño de pagina con scroll y login.
 
 ### Prerequisitos
 * Instalar PHP y [Laravel](https://laravel.com/)
-* [Instrucciones de como instalar en Blackboard](https://docs.google.com/document/d/1uRJtdrB-R47UZ-lCQ_U6D5TzM5Ks2g5dgLSSNG4xMIo/edit?usp=sharing)
+* [Instrucciones de como instalar laravel y todo lo necesario](https://docs.google.com/document/d/1uRJtdrB-R47UZ-lCQ_U6D5TzM5Ks2g5dgLSSNG4xMIo/edit?usp=sharing)
 
 ### Instalacion
 
