@@ -61,16 +61,17 @@ Proyecto de diseño de pagina con scroll y login.
 ### Prerequisitos
 * Instalar PHP y [Laravel](https://laravel.com/)
 * [Instrucciones de como instalar en Blackboard](https://docs.google.com/document/d/1uRJtdrB-R47UZ-lCQ_U6D5TzM5Ks2g5dgLSSNG4xMIo/edit?usp=sharing)
-* Crear una base de datos con nombre proyectophp
-* Verificar que en el directorio de instalacion de php, exactamente en ```/tools/php80``` el ```php.ini``` tenga la linea ```'extension=pdo_mysql'``` y la linea ```'extension=gd'``` Sin ";"
+
 ### Instalacion
 
 1. Clone the repo
    ```sh
    git clone https://github.com/Ckeshua/Tarea1.git
    ```
-* 2. Abrir powershell y luego dirigirse a la ubicacion del proyecto e ingresar ```php artisan migrate``` y ```php artisan migrate:fresh --seed```
-* 3. Iniciar servidor con ```php artisan serve```
+* 2. Crear una base de datos con nombre proyectophp
+* 3. Verificar que en el directorio de instalacion de php, exactamente en ```/tools/php80``` el ```php.ini``` tenga la linea ```'extension=pdo_mysql'``` y la linea ```'extension=gd'``` Sin ";"
+* 4. Abrir powershell y luego dirigirse a la ubicacion del proyecto e ingresar ```php artisan migrate``` y ```php artisan migrate:fresh --seed```
+* 5. Iniciar servidor con ```php artisan serve```
 
 ### Uso
 * Para hacer uso de esta pagina siga estos simples pasos:
