@@ -54,9 +54,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## Sobre el Proyecto
-Proyecto de diseño de pagina con scroll y login.
-* Scroll ubicado en la ruta ```/```
-* Login ubicado en la ruta ```/login```
+ScanFast, es una aplicación web que tiene funcionalidades para ver y filtrar archivos PDF junto con una funcionalidad para tomar fotos por webcam/cámara y luego subirlo al repositorio de la página. La página al buscar el repositorio es capaz de evitar que personas sin los permisos para ver el archivo sean incapaces de esto.
 
 ### Prerequisitos
 * Instalar PHP y [Laravel](https://laravel.com/)
