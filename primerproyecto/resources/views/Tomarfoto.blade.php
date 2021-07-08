@@ -58,13 +58,12 @@
 
     </header>
     <div class="contentarea" style="display: flex; flex-wrap: wrap;">
-
         <form style="display: inline;">
             <canvas style="display: none;" id="canvas">
             </canvas>
         </form>
         <div id="div_video" >
-            <video id="video">Video stream not available.</video>
+            <video id="video" playsinline>Video stream not available.</video>
         </div>
         <div style="max-width: 500px; min-width: 340px;"></div>
         <div id="writeinfo" ></div>

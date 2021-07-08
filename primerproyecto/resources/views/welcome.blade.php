@@ -16,7 +16,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <img href = "/home" src="{{asset('/logomenu1.png')}}" class="img-fluid" alt="..." >
+  <a class="navbar-brand" href="/home"><img  src="{{asset('/logomenu1.png')}}" class="img-fluid" alt="..." ></a>
   
   @auth
   
